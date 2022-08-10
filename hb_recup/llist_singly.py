@@ -18,24 +18,24 @@ class LinkedList:
         self.length = 0
 
     def append(self, data):
-        """ creates new node with passed data into it and assigns it to head and tail """
+        """ append new node with data to the end of list """
         new_node = Node(data)
 
         if not self.head:  # if False > if linkedList is empty > no node in it
             self.head = new_node
 
         if self.tail:  # if it has at least one item, non empty llist
-            self.tail = new_node
+            self.tail.next = new_node
 
         self.tail = new_node
         self.length = self.length + 1
 
 
-new_llist = LinkedList()
-
 node1 = Node(10)
 node2 = Node(20)
 node3 = Node(30)
+
+new_llist = LinkedList()
 
 new_llist.append(node1)
 new_llist.append(node2)
@@ -43,5 +43,6 @@ new_llist.append(node3)
 
 # can access only at the tail or head, or traverse trhough each item
 print(new_llist.head)
+print(new_llist.head.next)
 print(new_llist.tail)
 print(new_llist.length)
