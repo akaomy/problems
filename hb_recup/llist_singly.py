@@ -28,13 +28,14 @@ class LinkedList:
             self.tail = new_node
 
         self.tail = new_node
+        self.length = self.length + 1
 
 
 new_llist = LinkedList()
 
-node1 = Node(1)
-node2 = Node(2)
-node3 = Node(3)
+node1 = Node(10)
+node2 = Node(20)
+node3 = Node(30)
 
 new_llist.append(node1)
 new_llist.append(node2)
@@ -43,3 +44,4 @@ new_llist.append(node3)
 # can access only at the tail or head, or traverse trhough each item
 print(new_llist.head)
 print(new_llist.tail)
+print(new_llist.length)
