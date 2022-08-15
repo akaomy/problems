@@ -34,15 +34,15 @@ class LinkedList:
     def add_at_head(self, data):
         """add a node at the beginning"""
 
-        current = Node(data)
-        current.next = self.head
-        self.head = current
-        self.length = self.length + 1
+        current = Node(data)  # init new node with data
+        current.next = self.head  # link it to our current head
+        self.head = current  # now new node becomes our current head
+        self.length = self.length + 1  # increase length by one
 
     def traverse(self):
         """print out all data in each node"""
         while(self.head):
-            print('t', self.head.data)
+            print('head.data', self.head.data)
             self.head = self.head.next
 
     def search(self, item):
@@ -54,27 +54,31 @@ class LinkedList:
                 print('44 self.head.data item', self.head.data, item)
             self.head = self.head.next
 
-    # TODO: finish this funciton
-    def pop(self):
-        """delete node from the end of linked list"""
-        while(self.head):
-            if self.head == None:
-                return None
+    def delete_first_node(self):
+        """delete node from the beginning of linked list"""
+        self.head = self.head.next
+        # print(self.head)
+        # print(self.head.next)
 
 
 node1 = Node(10)
 node2 = Node(20)
+node5 = Node(25)
 node3 = Node(30)
 
 new_llist = LinkedList()
 
 new_llist.append(node1)
 new_llist.append(node2)
+new_llist.append(node5)
 new_llist.append(node3)
 
 # can access only at the tail or head, or traverse trhough each item
 
 print(new_llist.add_at_head(100))
-print(new_llist.add_at_head(120))
+# print(new_llist.add_at_head(120))
+# print(new_llist.traverse())
+# print(new_llist.length)
+# print(new_llist.traverse())
+print(new_llist.delete_first_node())
 print(new_llist.traverse())
-print(new_llist.length)
