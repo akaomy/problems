@@ -1,6 +1,7 @@
 class Node:
-    def __init__(self, data):
-        self.data = data
+
+    def __init__(self, node_data):
+        self.data = node_data
         self.next = None
 
     def __str__(self):
@@ -30,10 +31,27 @@ class LinkedList:
         self.tail = new_node
         self.length = self.length + 1
 
+    def add_at_head(self, data):
+        """add a node at the beginning"""
+
+        current = Node(data)
+        current.next = self.head
+        self.head = current
+        self.length = self.length + 1
+
     def traverse(self):
         """print out all data in each node"""
         while(self.head):
-            print(self.head.data)
+            print('t', self.head.data)
+            self.head = self.head.next
+
+    def search(self, item):
+        while(self.head):
+            # problem to compare <class '__main__.Node'> <class 'int'>
+            # print('41 self.head.data item', type(self.head.data), type(item))
+            if self.head.data == item:
+                # return True
+                print('44 self.head.data item', self.head.data, item)
             self.head = self.head.next
 
     # TODO: finish this funciton
@@ -54,9 +72,9 @@ new_llist.append(node1)
 new_llist.append(node2)
 new_llist.append(node3)
 
-new_llist.traverse()
 # can access only at the tail or head, or traverse trhough each item
-# print(new_llist.head)
-# print(new_llist.head.next)
-# print(new_llist.tail)
-# print(new_llist.length)
+
+print(new_llist.add_at_head(100))
+print(new_llist.add_at_head(120))
+print(new_llist.traverse())
+print(new_llist.length)
