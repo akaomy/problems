@@ -57,8 +57,19 @@ class LinkedList:
     def delete_first_node(self):
         """delete node from the beginning of linked list"""
         self.head = self.head.next
-        # print(self.head)
-        # print(self.head.next)
+
+    def delete_last_node(self):
+        """selete node from the end of linked list"""
+
+        previous = None
+        current = self.head
+
+        while(current.next):
+            previous = current
+            current = current.next
+
+        if previous:
+            previous.next = None
 
 
 node1 = Node(10)
@@ -75,10 +86,12 @@ new_llist.append(node3)
 
 # can access only at the tail or head, or traverse trhough each item
 
-print(new_llist.add_at_head(100))
+# print(new_llist.add_at_head(100))
 # print(new_llist.add_at_head(120))
 # print(new_llist.traverse())
 # print(new_llist.length)
 # print(new_llist.traverse())
-print(new_llist.delete_first_node())
-print(new_llist.traverse())
+print(new_llist.delete_last_node())
+# print(new_llist.delete_last_node())
+# print(new_llist.traverse())
+#
