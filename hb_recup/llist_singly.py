@@ -45,14 +45,16 @@ class LinkedList:
             print('head.data', self.head.data)
             self.head = self.head.next
 
-    def search(self, item):
-        while(self.head):
+    def search(self, data):
+        current = self.head
+        while(current.next):
             # problem to compare <class '__main__.Node'> <class 'int'>
             # print('41 self.head.data item', type(self.head.data), type(item))
-            if self.head.data == item:
-                # return True
-                print('44 self.head.data item', self.head.data, item)
-            self.head = self.head.next
+            if current.data == data:
+                return True
+                # print('44 self.head.data item', self.head.data, itdataem)
+
+            return False
 
     def delete_first_node(self):
         """delete node from the beginning of linked list"""
@@ -91,7 +93,7 @@ new_llist.append(node3)
 # print(new_llist.traverse())
 # print(new_llist.length)
 # print(new_llist.traverse())
-print(new_llist.delete_last_node())
 # print(new_llist.delete_last_node())
-# print(new_llist.traverse())
-#
+# print(new_llist.delete_last_node())
+print(new_llist.traverse())
+print(new_llist.search(10))
