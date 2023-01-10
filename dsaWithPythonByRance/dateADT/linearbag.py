@@ -1,3 +1,6 @@
+
+import bagIterator
+
 # list based implementation
 
 class Bag:
@@ -26,7 +29,7 @@ class Bag:
     
     # returns an iterator for traversing the list of items
     def __iter__(self, item):
-        pass
+        return bagIterator.BagIterator(self._items)
 
 # empty bag -> empty list
 # bag size -> list size
